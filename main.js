@@ -406,9 +406,9 @@ const drawGbuffer = regl({
 })
 
 function Mesh (elements, position, normal) {
-  this.elements = elements
-  this.position = position
-  this.normal = normal
+  this.elements = regl.elements(elements);
+  this.position = regl.buffer(position);
+  this.normal = regl.buffer(normal);
 }
 
 // get single matrix from quaternion, translation and scale.
